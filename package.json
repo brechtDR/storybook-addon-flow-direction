@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-flow-direction",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Stress-test writing-mode and direction in Storybook and detect physical CSS with logical-property hints.",
   "keywords": [
     "storybook-addon",
@@ -35,7 +35,15 @@
     "./manager-helpers": "./dist/manager-helpers.js",
     "./package.json": "./package.json"
   },
-  "files": ["dist/**/*", "README.md", "LICENSE", "manager.js", "preview.js", "preset.js", "assets/icon.svg"],
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE",
+    "manager.js",
+    "preview.js",
+    "preset.js",
+    "assets/icon.svg"
+  ],
   "scripts": {
     "prebuild": "node -e \"fs.rmSync('./dist', { recursive: true, force: true })\"",
     "build": "run-s build:manager build:preview build:node",

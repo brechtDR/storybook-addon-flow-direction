@@ -6,8 +6,12 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) an
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-08
+
 ### Changed
 
+- Add `flowDirection.scanScope` project configuration in `.storybook/preview.ts` to include root-level `stories/`, built `/assets/` stylesheet sources, and PhysicalToast identifiers.
+- Expand README configuration docs with a concrete `scanScope` example for root-level `stories/` setups and guidance to keep include matchers narrowly scoped.
 - Normalize `repository.url` in `package.json` to the canonical npm format.
 - Restrict GitHub release workflow publishing to `main` and skip release publishing when `NPM_TOKEN` is missing.
 

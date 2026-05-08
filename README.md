@@ -94,12 +94,19 @@ const preview: Preview = {
       supportedDirections: ['ltr', 'rtl'],
       // Optional:
       // scanScope: { include: [/my-app/], exclude: ['vendor.css'] },
+      scanScope: {
+        // Match local story stylesheets in root-level `stories/` setups.
+        // Include build-time asset URLs so hashed CSS chunks are scanned too.
+        include: ['/src/stories/', '\\src\\stories\\', '.stories.', '.module.css', '/stories/', '\\stories\\', '/assets/', '\\assets\\'],
+      },
     },
   },
 };
 
 export default preview;
 ```
+
+If your story CSS still does not appear in scan results, add project-specific identifiers from generated stylesheet sources (for example chunk names) and keep the include list focused so you do not scan unrelated Storybook UI/vendor styles.
 
 ## Compatibility
 
