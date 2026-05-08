@@ -1,0 +1,40 @@
+.nav {
+  inline-size: min(100%, 32rem);
+  padding: 0.4rem;
+  border: 1px solid rgb(148 163 184 / 40%);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-inline: 0.65rem;
+  padding-block: 0.4rem;
+  border-radius: 0.45rem;
+}
+
+.active {
+  border-inline-start: 2px solid #2563eb;
+  background: rgb(37 99 235 / 8%);
+}
+
+.chevron {
+  color: #64748b;
+}
+
+/* Physical-only selectors for Broken stories. */
+.physicalCss .active {
+  border-inline-start: 0;
+  border-left: 2px solid #2563eb;
+}

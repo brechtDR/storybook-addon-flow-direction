@@ -1,0 +1,92 @@
+.drawer {
+  position: relative;
+  inline-size: min(100%, 24rem);
+  min-block-size: 12rem;
+  padding-block: 0.9rem;
+  padding-inline: 0.9rem;
+  border: 1px solid rgb(15 23 42 / 14%);
+  border-radius: 0.8rem;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.label {
+  display: inline-block;
+  float: inline-start;
+  margin-inline-end: 0.5rem;
+  padding-block: 0.2rem;
+  padding-inline: 0.45rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0;
+  padding-inline-end: 2rem;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.description {
+  margin: 0.55rem 0 0.9rem;
+  clear: both;
+  color: #475569;
+  font-size: 0.88rem;
+}
+
+.list {
+  margin: 0;
+  padding-inline-start: 1rem;
+  text-align: start;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.handle {
+  position: absolute;
+  inset-inline-end: -0.55rem;
+  inset-block-start: 50%;
+  inline-size: 0.7rem;
+  block-size: 2.4rem;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: #94a3b8;
+}
+
+.close {
+  position: absolute;
+  inset-block-start: 0.55rem;
+  inset-inline-end: 0.55rem;
+  inline-size: 1.45rem;
+  block-size: 1.45rem;
+  border: 1px solid rgb(15 23 42 / 18%);
+  border-radius: 0.4rem;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Physical-only selectors for Broken stories. */
+.physicalLabel {
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.physicalList {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.physicalHandle {
+  right: -0.55rem;
+  top: 50%;
+}
+
+.physicalClose {
+  right: 0.55rem;
+  top: 0.55rem;
+}

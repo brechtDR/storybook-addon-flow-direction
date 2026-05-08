@@ -1,0 +1,63 @@
+.viewport {
+  inline-size: min(100%, 34rem);
+  block-size: 12rem;
+  overflow-inline: auto;
+  overflow-block: hidden;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
+  border: 1px solid rgb(148 163 184 / 40%);
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.track {
+  display: flex;
+  inline-size: max-content;
+  min-block-size: 100%;
+  gap: 0.8rem;
+  margin: 0;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  list-style: none;
+}
+
+.slide {
+  scroll-snap-align: start;
+  scroll-margin-inline: 0.4rem;
+  inline-size: 12rem;
+  min-block-size: 9rem;
+  padding: 0.85rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(180deg, rgb(59 130 246 / 10%), rgb(30 64 175 / 5%));
+  border: 1px solid rgb(59 130 246 / 28%);
+  color: #1e293b;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.copy {
+  margin: 0;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* Physical-only overrides for Broken story. */
+.physicalCss {
+  width: min(100%, 34rem);
+  height: 12rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1rem;
+  scroll-padding-right: 1rem;
+}
+
+.physicalCss .slide {
+  width: 12rem;
+  min-height: 9rem;
+  scroll-margin-left: 0.4rem;
+  scroll-margin-right: 0.4rem;
+}

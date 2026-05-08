@@ -1,0 +1,56 @@
+.tile {
+  inline-size: min(100%, 24rem);
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid rgb(148 163 184 / 40%);
+  border-radius: 0.8rem;
+  background: #fff;
+  color: #0f172a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.price {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.features {
+  margin: 0;
+  padding-inline-start: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cta {
+  border: 0;
+  border-radius: 0.5rem;
+  padding-block: 0.55rem;
+  padding-inline: 0.8rem;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Physical-only selectors for Broken stories. */
+.physicalCss {
+  text-align: left;
+}
+
+.physicalCss .features {
+  padding-left: 1rem;
+  margin-right: 0.5rem;
+}

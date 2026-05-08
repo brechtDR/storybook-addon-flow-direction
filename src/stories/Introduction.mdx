@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Introduction" />
+
+# Flow Direction Addon
+
+This Storybook addon helps teams validate layout behavior across writing modes and direction values before shipping localized UI.
+
+## Quick start
+
+1. Open a `Broken/*` story.
+2. Use the **Flow Direction** toolbar control to switch writing mode and direction.
+3. Open the **Flow Direction** panel and click **Re-scan**.
+4. Use **Focus offender** on a finding to jump to the offending element.
+5. Compare with the matching `Working/*` story.
+
+## Story parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `flowDirection.matrix` | `boolean` | Render the story as the six-cell writing-mode + direction matrix. |
+| `flowDirection.scanScope.include` | `(string \\| RegExp)[]` | Optional source matchers for stylesheet inclusion. |
+| `flowDirection.scanScope.exclude` | `(string \\| RegExp)[]` | Optional source matchers to ignore from scanning. |
+
+## Screenshots
+
+- Matrix mode: `assets/screenshots/matrix-view.png`
+- Scanner panel: `assets/screenshots/scanner-panel.png`
+
+## Full documentation
+
+See [`README.md`](../../README.md) for install, compatibility, and API details.
