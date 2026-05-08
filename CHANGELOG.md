@@ -1,3 +1,22 @@
+# v0.2.2 (Fri May 08 2026)
+
+#### 🐛 Bug Fix
+
+- docs: rewrite README and release 0.1.1 [#1](https://github.com/brechtDR/storybook-addon-flow-direction/pull/1) ([@brechtDR](https://github.com/brechtDR))
+
+#### ⚠️ Pushed to `main`
+
+- fix: grant release workflow push permissions ([@brechtDR](https://github.com/brechtDR))
+- fix: make release workflow token check valid ([@brechtDR](https://github.com/brechtDR))
+- feat: improve flow-direction scan scope for story CSS ([@brechtDR](https://github.com/brechtDR))
+- feat: initial release of storybook-addon-flow-direction ([@brechtDR](https://github.com/brechtDR))
+
+#### Authors: 1
+
+- Brecht De Ruyte ([@brechtDR](https://github.com/brechtDR))
+
+---
+
 # Changelog
 
 All notable changes to `storybook-addon-flow-direction` are documented in this file.
