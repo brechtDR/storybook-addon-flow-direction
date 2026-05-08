@@ -59,9 +59,7 @@
     "lint": "eslint --cache .",
     "lint:fix": "pnpm lint --fix",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm lint && pnpm typecheck && pnpm build",
-    "prerelease": "zx scripts/prepublish-checks.js",
-    "release": "pnpm run build && auto shipit",
+    "prepublishOnly": "pnpm lint && pnpm typecheck && pnpm build && zx scripts/prepublish-checks.js",
     "start": "run-p build:watch \"storybook --quiet\"",
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -75,7 +73,6 @@
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.7.0",
-    "auto": "^11.3.0",
     "boxen": "^8.0.1",
     "clsx": "^2.1.1",
     "eslint": "^9.36.0",
