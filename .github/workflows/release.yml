@@ -1,6 +1,10 @@
 name: Release
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   release:
@@ -26,8 +30,14 @@ jobs:
         run: pnpm install
 
       - name: Create Release
+        if: ${{ secrets.NPM_TOKEN != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm run release
+
+      - name: Skip release when NPM token is missing
+        if: ${{ secrets.NPM_TOKEN == '' }}
+        run: |
+          echo "NPM_TOKEN is not configured. Skipping release publish step."

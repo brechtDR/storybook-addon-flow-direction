@@ -6,13 +6,13 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) an
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Release policy and preflight documentation updates in `README.md`.
+- Normalize `repository.url` in `package.json` to the canonical npm format.
+- Restrict GitHub release workflow publishing to `main` and skip release publishing when `NPM_TOKEN` is missing.
+
+## [0.1.1] - 2026-05-08
 
 ### Changed
 
-- Package metadata links now point to `brechtDR/storybook-addon-flow-direction`.
-- Peer dependency strategy updated to keep `@storybook/icons` while removing `react` and `react-dom`.
-- Prepublish checks now allow `@storybook/icons` as an intentional peer dependency.
-- Next release target remains `0.1.0` for easier initial adoption.
+- Rewrite `README.md` to remove maintainer-only sections and fix the broken `FLOW_DIRECTIONS` / `FLOW_WRITING_MODES` import example.
