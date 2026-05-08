@@ -17,13 +17,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
-    env:
-      RELEASE_GITHUB_TOKEN: ${{ secrets.RELEASE_PAT != '' && secrets.RELEASE_PAT || github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ env.RELEASE_GITHUB_TOKEN }}
 
       - name: Prepare repository
         run: git fetch --unshallow --tags
@@ -42,7 +38,7 @@ jobs:
 
       - name: Create Release
         env:
-          GITHUB_TOKEN: ${{ env.RELEASE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           if [ -n "${NPM_TOKEN:-}" ]; then
