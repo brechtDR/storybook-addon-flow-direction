@@ -7,14 +7,29 @@ const DEFAULT_SCAN_SCOPE: Required<ScanScopeConfig> = {
   exclude: [],
 };
 
-function shortenClassToken(token: string): string {
-  if (token.includes('_')) {
-    return token.split('_')[0] || token;
+function escapeCssIdentifier(value: string): string {
+  if (typeof CSS !== 'undefined' && typeof CSS.escape === 'function') {
+    return CSS.escape(value);
   }
-  if (/-[a-z0-9]{5,}$/i.test(token)) {
-    return token.replace(/-[a-z0-9]{5,}$/i, '');
+  return value.replace(/[^a-zA-Z0-9_-]/g, '\\$&');
+}
+
+function escapeAttributeValue(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+export function shortenClassToken(token: string): string {
+  const cssModuleHashMatch = token.match(/^(?<base>.+)_(?<hash>[a-z0-9]{5,})$/i);
+  if (!cssModuleHashMatch?.groups) {
+    return token;
   }
-  return token;
+
+  const { base, hash } = cssModuleHashMatch.groups;
+  if (!base || !hash || !/\d/.test(hash)) {
+    return token;
+  }
+
+  return base;
 }
 
 function safeClassName(element: Element): string {
@@ -28,17 +43,17 @@ function safeClassName(element: Element): string {
 export function elementHint(element: Element): string {
   const testId = element.getAttribute('data-testid');
   if (testId) {
-    return `[data-testid="${testId}"]`;
+    return `[data-testid="${escapeAttributeValue(testId)}"]`;
   }
 
   const identifier = element.getAttribute('data-flow-direction-label');
   if (identifier) {
-    return `[data-flow-direction-label="${identifier}"]`;
+    return `[data-flow-direction-label="${escapeAttributeValue(identifier)}"]`;
   }
 
-  const id = element.id ? `#${element.id}` : '';
+  const id = element.id ? `#${escapeCssIdentifier(element.id)}` : '';
   const firstClass = safeClassName(element).trim().split(/\s+/).filter(Boolean)[0];
-  const className = firstClass ? `.${shortenClassToken(firstClass)}` : '';
+  const className = firstClass ? `.${escapeCssIdentifier(shortenClassToken(firstClass))}` : '';
   return `${element.tagName.toLowerCase()}${id}${className}`.slice(0, 64);
 }
 

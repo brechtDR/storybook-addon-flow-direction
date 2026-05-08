@@ -6,6 +6,16 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) an
 
 ## [Unreleased]
 
+### Fixed
+
+- Preserve semantic hyphenated class tokens (for example `static-card`) in scanner element hints so **Focus offender** targets the correct DOM node instead of trimming class names aggressively.
+- Escape selector hint identifiers and attribute values before querying so special characters do not produce invalid selectors.
+
+### Added
+
+- Add scanner regression tests for class-token normalization (`physical-toast` remains intact; CSS-module underscore hashes are still normalized).
+- Add `Working/Static Card` and `Broken/Static Card` stories to demonstrate class-based focus targeting with non-hashed semantic selectors.
+
 ## [0.2.0] - 2026-05-08
 
 ### Changed
