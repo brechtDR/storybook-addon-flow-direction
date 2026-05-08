@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-flow-direction",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Stress-test writing-mode and direction in Storybook and detect physical CSS with logical-property hints.",
   "keywords": [
     "storybook-addon",
