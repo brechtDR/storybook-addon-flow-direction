@@ -62,7 +62,8 @@
     "prepublishOnly": "pnpm lint && pnpm typecheck && pnpm build && zx scripts/prepublish-checks.js",
     "start": "run-p build:watch \"storybook --quiet\"",
     "storybook": "storybook dev -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pnpm run test:unit",
+    "test:unit": "tsx --test src/**/*.test.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -90,6 +91,7 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.44.1",
+    "tsx": "^4.20.6",
     "vite": "^7.0.5",
     "zx": "^8.7.1"
   },

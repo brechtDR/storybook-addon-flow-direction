@@ -73,6 +73,9 @@ Cross-origin stylesheets that block `cssRules` access are skipped.
 3. Review grouped findings.
 4. Click **Focus offender** to jump to the element in preview.
 
+Selector hints used by **Focus offender** are derived in this order: `data-testid`, `data-flow-direction-label`, `id`, then the first class token.
+Class tokens keep semantic hyphenated names intact (for example `physical-toast`), while CSS-module style underscore hash suffixes are normalized for readability.
+
 ## Configuration
 
 Supported parameters:
