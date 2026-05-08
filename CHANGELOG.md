@@ -6,6 +6,11 @@ This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) an
 
 ## [Unreleased]
 
+### Changed
+
+- Normalize `repository.url` in `package.json` to the canonical npm format.
+- Restrict GitHub release workflow publishing to `main` and skip release publishing when `NPM_TOKEN` is missing.
+
 ## [0.1.1] - 2026-05-08
 
 ### Changed
