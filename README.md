@@ -116,6 +116,20 @@ If your story CSS still does not appear in scan results, add project-specific id
 - Storybook `10.x`
 - Node.js `>=20.19`
 
+## Chromatic
+
+This repository publishes Storybook builds to Chromatic through `.github/workflows/chromatic.yml`.
+
+Required one-time setup:
+
+1. Create or connect the Chromatic project for this GitHub repository.
+2. Add `CHROMATIC_PROJECT_TOKEN` as a GitHub Actions repository secret.
+
+Workflow behavior:
+
+- `pull_request` to `develop`: runs visual review builds.
+- `push` to `develop`: updates the branch baseline.
+
 ## License
 
 MIT
