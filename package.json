@@ -55,6 +55,7 @@
     "build:manager:watch": "pnpm run build:manager -- --watch",
     "build:preview:watch": "pnpm run build:preview -- --watch",
     "build:node:watch": "pnpm run build:node -- --watch",
+    "chromatic": "chromatic --exit-zero-on-changes --storybook-build-dir=storybook-static",
     "format": "prettier --write .",
     "lint": "eslint --cache .",
     "lint:fix": "pnpm lint --fix",
@@ -78,6 +79,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "auto": "^11.3.0",
     "boxen": "^8.0.1",
+    "chromatic": "^16.10.0",
     "clsx": "^2.1.1",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
@@ -92,15 +94,15 @@
     "storybook": "next",
     "ts-dedent": "^2.2.0",
     "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.44.1",
-    "tsx": "^4.20.6",
     "vite": "^7.0.5",
     "zx": "^8.7.1"
   },
   "peerDependencies": {
-    "storybook": "^10.0.0",
-    "@storybook/icons": "^2.0.0"
+    "@storybook/icons": "^2.0.0",
+    "storybook": "^10.0.0"
   },
   "engines": {
     "node": ">=20.19"
